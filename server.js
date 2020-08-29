@@ -118,7 +118,7 @@ app.post('/git', verifySignature, (req, res) => {
   }
 })
 
-const verifySignature = (req, res, next) => {
+function verifySignature(req, res, next) {
   const payload = JSON.stringify(req.body)
   const hmac = crypto.createHmac('sha1', process.env.GITHUB_SECRET)
   const digest = 'sha1=' + hmac.update(payload).digest('hex')
