@@ -15,7 +15,8 @@
   "devDependencies": {
     "sqlite3": "^5.0.0",
     "sinon": "^9.0.3",
-    "ava": "^3.12.1"
+    "ava": "^3.12.1",
+    "axios": "^0.20.0"
   },
   "engines": {
     "node": "14.x"
