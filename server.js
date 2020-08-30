@@ -7,7 +7,7 @@ const config = {
 const app = new Koa();
 
 app.use(async ctx => {
-    ctx.body = 'Hello, Arkham Horror!';
+    ctx.body = "Hello, Arkham Horror! We're expanding!";
 });
 
 app.listen(config.port);
