@@ -1,6 +1,6 @@
-const test = require("ava");
-const axios = require("axios");
-const config = require("./server").config;
+import test from "ava";
+import axios from "axios";
+import {config} from "server"
 
 test('my passing test', async t => {
     let url = `http://${config.iface}:${config.port}`;
