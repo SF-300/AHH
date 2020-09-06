@@ -18,20 +18,22 @@ export const config = {
         // NOTE(zeronineseven): https://basarat.gitbook.io/typescript/main-1/defaultisbad#dynamic-imports
         const koaWebpack = (await import("koa-webpack")).default;
         // @ts-ignore
-        const webpackConfig = (await import("../../webpack.config.js")).default;
+        const [serverConfig, clientConfig] = (await import("../../webpack.config.js")).default;
         koa.use(await koaWebpack({
             hotClient: false,
             config: {
-                ...webpackConfig,
+                ...clientConfig,
                 mode: "development",
             }
         }));
     }
 
     koa.use(async ctx => {
+        console.log("Request!")
         ctx.body = "Hello, Arkham Horror! We're expanding!";
     });
 
+    console.log("Running...")
     koa.listen(config.port, config.iface);
 
 })()).catch((e: Error) => {

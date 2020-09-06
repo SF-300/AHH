@@ -3,38 +3,41 @@
   "version": "0.0.1",
   "description": "A simple helper utility to play 'Arkham Horror' game.",
   "private": true,
-  "main": "server.js",
   "scripts": {
+    "test": "ava -s",
     "build": "webpack",
-    "start": "ts-node -r tsconfig-paths/register src/server",
-    "test": "ava -s"
+    "start": "by-node-env",
+    "start:development": "ts-node -r tsconfig-paths/register src/server",
+    "start:production": "node dist/server.js"
   },
   "dependencies": {
-    "@types/knex": "^0.16.1",
-    "@types/koa": "^2.11.4",
-    "@types/node": "^14.6.4",
+    "by-node-env": "^2.0.1",
     "knex": "^0.21.5",
     "koa": "^2.13.0",
-    "pg": "^8.3.3",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.2"
+    "pg": "^8.3.3"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
+    "@types/knex": "^0.16.1",
+    "@types/koa": "^2.11.4",
     "@types/koa-webpack": "^6.0.0",
+    "@types/node": "^14.6.4",
     "ava": "^3.12.1",
     "axios": "^0.20.0",
     "koa-webpack": "^6.0.0",
     "sinon": "^9.0.3",
     "sqlite3": "^5.0.0",
     "ts-loader": "^8.0.3",
+    "ts-node": "^9.0.0",
     "tsconfig-paths": "^3.9.0",
     "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "^4.0.2",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^2.5.2"
   },
   "engines": {
-    "node": "^14.3.0"
+    "node": "14.9.0"
   },
   "repository": {
     "url": "https://github.com/SF-300/AHH"
